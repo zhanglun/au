@@ -7,10 +7,14 @@ const config = require('../config');
 module.exports = webpackMerge(webpackBaseConfig, {
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, '../../'),
+    hot: true,
+    inline: true,
+    open: true,
     compress: true,
+    proxy: {
+      '!(/__webpack_hmr)': 'http://localhost:8080',
+    },
     port: 9000,
-    publicPath: config.dev.assetsPublicPath,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
