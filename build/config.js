@@ -9,7 +9,7 @@ function resolve(dir) {
 module.exports = {
   dev: {
     assetsSubDirectory: 'public',
-    assetsPublicPath: '/assets'
+    assetsPublicPath: '/assets/'
   },
   build: {
     assetsRoot: resolve('public/assets'),
